@@ -28,7 +28,7 @@ public class LogicTest {
 	 */
 	@Test
 	public void testBuscarPalabra() {
-		assertEquals("del", logic.BuscarPalabra(), 2);
+		assertEquals(logic.BuscarPalabra(), 2);
 	}
 
 	/**
@@ -36,6 +36,6 @@ public class LogicTest {
 	 */
 	@Test
 	public void testCaracterBorrado() {
-		assertEquals("o", logic.CaracterBorrado(), "SGAMS CIUDAD DEL SL Y DEL ACER");
+		assertEquals(logic.CaracterBorrado(), "SGAMS CIUDAD DEL SL Y DEL ACER");
 	}
 }
