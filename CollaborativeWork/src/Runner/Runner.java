@@ -32,8 +32,9 @@ public class Runner {
 			case 1:
 				break;
 			case 2:
-				String word=JOptionPane.showInputDialog("Digite palabra");
-				JOptionPane.showMessageDialog(null, lo.BuscarPalabra(word));
+					String word=JOptionPane.showInputDialog("Digite palabra");
+					JOptionPane.showMessageDialog(null, "Error");
+					JOptionPane.showMessageDialog(null, lo.BuscarPalabra(word));
 				break;
 			case 3:
 				break;
@@ -63,6 +64,5 @@ public class Runner {
 
 	public static void main(String[] args) {
 		menu();
-
 	}
 }
