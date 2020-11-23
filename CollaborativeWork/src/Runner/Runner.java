@@ -30,7 +30,7 @@ public class Runner {
 			}
 			switch (menu) {
 			case 1:
-				JOptionPane.showMessageDialog(null, lo.nombrePropio);
+				JOptionPane.showMessageDialog(null, lo.nombrePropio());
 				break;
 			case 2:
 					String word=JOptionPane.showInputDialog("Digite palabra");
@@ -38,6 +38,10 @@ public class Runner {
 					JOptionPane.showMessageDialog(null, lo.BuscarPalabra(word));
 				break;
 			case 3:
+				String sentence;
+				sentence=JOptionPane.showInputDialog("escriba palabra u oracion a encriptar");
+				JOptionPane.showMessageDialog(null, Logic.Encrypt(sentence));
+				menu();
 				break;
 			case 4:
 				break;
@@ -55,7 +59,7 @@ public class Runner {
 			case 9:
 				break;
 			case 10:
-				JOptionPane.showMessageDialog(null, "La fecha es:" + lo.fecha);
+				JOptionPane.showMessageDialog(null, "La fecha es:" + lo.fecha());
 				break;
 			case 11:
 				JOptionPane.showInputDialog("Ha salido del programa");

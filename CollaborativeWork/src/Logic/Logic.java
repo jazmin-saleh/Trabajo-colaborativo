@@ -1,5 +1,7 @@
 package Logic;
 
+import java.time.LocalDate;
+
 /**
  * @author jasmin saleh Clase de la logica donde se realiza la funcionaliodad de
  *         cada uno de los métdos
@@ -45,6 +47,23 @@ public class Logic {
 		}
 		return counter;
 	}
+	 public static String Encrypt(String sentenc) {
+			
+			char array[]=sentenc.toCharArray();
+			
+			for (int i = 0; i < array.length; i++) {
+			     
+				array[i]=(char)(array[i]+(char)8);
+				
+			  }
+			
+			String encrypted=String.valueOf(array);
+			
+			
+			return encrypted;
+			
+		}
+	
 
 	/**
 	 * @return Se defino cual es el caracter a borrar Se ignora mayusculas y
