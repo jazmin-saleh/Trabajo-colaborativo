@@ -6,17 +6,15 @@ package Logic;
  *
  */
 public class Logic {
+	
+	final String sentence="sogamoso ciudad del sol y del acero";
 
-	/**
-	 * Atributo de la clase
-	 */
-	final String sentence;
 
 	/**
 	 * Constructor de la clase
 	 */
 	public Logic() {
-		sentence = "sogamoso ciudad del sol y del acero";
+		
 	}
 
 	/**
@@ -26,9 +24,8 @@ public class Logic {
 	 *         existe la cadena
 	 * 
 	 */
-	public int BuscarPalabra() {
-		String word = "del";
-		 String wordSpace = " " + word + " ";
+	public int BuscarPalabra(String word) {
+		 String wordSpace = " "+word + " ";
 		int counter = 0;
 		for (int i = 0; i < (sentence.length() - wordSpace.length()); i++) {
 			if (sentence.substring(i, i + wordSpace.length()).equalsIgnoreCase(wordSpace)) {
@@ -43,9 +40,9 @@ public class Logic {
 	 *         minusculas Retorna cadena sin los caracteres
 	 * 
 	 */
-	public String CaracterBorrado() {
+	public String CaracterBorrado(String sentencee) {
 		char replace = 'O';
-		String cpaitalPhrase = sentence.toUpperCase();
+		String cpaitalPhrase = sentencee.toUpperCase();
 		String capitalCharacter = Character.toString(replace).toUpperCase();
 		String removeCracter = cpaitalPhrase.replaceAll(capitalCharacter, "");
 		return removeCracter;
