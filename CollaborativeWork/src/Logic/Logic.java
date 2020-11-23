@@ -16,6 +16,17 @@ public class Logic {
 	public Logic() {
 		
 	}
+	
+	public String nombrePropio() {
+		char[] characteres= sentence.toCharArray();
+		characteres[0]= Character.toUpperCase(characteres[0]);
+		 for (int i = 0; i < characteres.length-2; i++) {
+			if (characteres[i]== ' ' || characteres[i]== '.' || characteres[i]== ',') {
+				characteres[i+1]= Character.toUpperCase(characteres[i+1]);
+			}
+		}
+		return new String(characteres);
+		}
 
 	/**
 	 * @return En este método se busca una plabra en este caso es (del) Se pone un
@@ -46,5 +57,12 @@ public class Logic {
 		String capitalCharacter = Character.toString(replace).toUpperCase();
 		String removeCracter = cpaitalPhrase.replaceAll(capitalCharacter, "");
 		return removeCracter;
+	}
+	
+	public LocalDate fecha() {
+	 	String dateString= JOptionPane.showInputDialog("Ingresa la cadena en formato AAAA-MM-DD");
+	 	LocalDate date= LocalDate.parse(dateString);
+		return date;
+	 	
 	}
 }

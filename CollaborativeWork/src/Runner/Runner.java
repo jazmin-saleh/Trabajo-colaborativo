@@ -30,6 +30,7 @@ public class Runner {
 			}
 			switch (menu) {
 			case 1:
+				JOptionPane.showMessageDialog(null, lo.nombrePropio);
 				break;
 			case 2:
 					String word=JOptionPane.showInputDialog("Digite palabra");
@@ -54,6 +55,7 @@ public class Runner {
 			case 9:
 				break;
 			case 10:
+				JOptionPane.showMessageDialog(null, "La fecha es:" + lo.fecha);
 				break;
 			case 11:
 				JOptionPane.showInputDialog("Ha salido del programa");
