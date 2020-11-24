@@ -53,6 +53,8 @@ public class Runner {
 				JOptionPane.showMessageDialog(null, lo.CaracterBorrado(sentencee));
 				break;
 			case 7:
+				sentence=JOptionPane.showInputDialog("escriba palabra a intersectar");
+				JOptionPane.showMessageDialog(null, lo.intersection(sentence));
 				break;
 			case 8:
 				break;

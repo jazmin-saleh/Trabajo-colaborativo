@@ -47,6 +47,12 @@ public class Logic {
 		}
 		return counter;
 	}
+	
+	/**
+	 * Metodo en cual recibe una cadena y este encripta o cifra dicha cadena.
+	 * @param cadena 
+	 * @return retorna un resultado de tipo string.
+	 */
 	 public static String Encrypt(String sentenc) {
 			
 			char array[]=sentenc.toCharArray();
@@ -63,6 +69,7 @@ public class Logic {
 			return encrypted;
 			
 		}
+	 
 	
 
 	/**
@@ -77,6 +84,26 @@ public class Logic {
 		String removeCracter = cpaitalPhrase.replaceAll(capitalCharacter, "");
 		return removeCracter;
 	}
+	
+	/**
+	 * Metodo el cual elimina caracteres repetidos
+	 * @param sentenc
+	 * @return
+	 */
+	 public  String intersection(String sentenc) {
+		 
+		 StringBuilder noDupes = new StringBuilder();
+		    for (int i = 0; i < sentenc.length(); i++) {
+		    	for (int j = 0; j < sentence.length(); j++) {
+		    		String si = sentenc.substring(i, i + 1);
+		    		if (noDupes.indexOf(si) == -1) {
+		                noDupes.append(si); } 
+		             } 
+						
+				} 	
+	    	return noDupes.toString();	
+				
+		}
 	
 	public LocalDate fecha() {
 	 	String dateString= JOptionPane.showInputDialog("Ingresa la cadena en formato AAAA-MM-DD");
