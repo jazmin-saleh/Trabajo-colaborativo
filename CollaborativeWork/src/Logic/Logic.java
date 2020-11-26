@@ -86,24 +86,27 @@ public class Logic {
 	}
 	
 	/**
-	 * Metodo el cual elimina caracteres repetidos
-	 * @param sentenc
-	 * @return
+	 * Metodo el cual muestra las caracteres que se repiten entre las dos cadenas  
+	 * @param sentenc cadena de caracteres
+	 * @return retorna cadena de caracteres que se repiten del parametro ingresado
 	 */
 	 public  String intersection(String sentenc) {
 		 
-		 StringBuilder noDupes = new StringBuilder();
-		    for (int i = 0; i < sentenc.length(); i++) {
-		    	for (int j = 0; j < sentence.length(); j++) {
-		    		String si = sentenc.substring(i, i + 1);
-		    		if (noDupes.indexOf(si) == -1) {
-		                noDupes.append(si); } 
-		             } 
-						
-				} 	
-	    	return noDupes.toString();	
-				
+		  String duplicate="";
+	   	    
+	   		for (int i = 0; i < sentenc.length(); i++) {
+	   			
+	   	    		String si = Character.toString(sentenc.charAt(i));
+		
+	   	    		if (sentence.contains(si)) {
+	   	               if(!duplicate.contains(si)) {
+	   	            	   duplicate+=si;  
+	   	               }
+	   	    		} 			
+	   		} 	    	 		
+	    	return duplicate;			
 		}
+	 
 	
 	public LocalDate fecha() {
 	 	String dateString= JOptionPane.showInputDialog("Ingresa la cadena en formato AAAA-MM-DD");
