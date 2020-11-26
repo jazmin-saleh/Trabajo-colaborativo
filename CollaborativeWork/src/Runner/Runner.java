@@ -57,6 +57,9 @@ public class Runner {
 				JOptionPane.showMessageDialog(null, lo.intersection(sentence));
 				break;
 			case 8:
+				sentence=JOptionPane.showInputDialog("escriba palabra a diferenciar");
+				JOptionPane.showMessageDialog(null, lo.difference(sentence));
+				
 				break;
 			case 9:
 				break;

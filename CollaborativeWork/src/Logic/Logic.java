@@ -85,11 +85,13 @@ public class Logic {
 		return removeCracter;
 	}
 	
+	
 	/**
-	 * Metodo el cual muestra las caracteres que se repiten entre las dos cadenas  
+	 * Metodo el cual muestra los caracteres que se repiten entre las dos cadenas  
 	 * @param sentenc cadena de caracteres
-	 * @return retorna cadena de caracteres que se repiten del parametro ingresado
+	 * @return retorna cadena de caracteres iguales sin repetir del parametro ingresado
 	 */
+	
 	 public  String intersection(String sentenc) {
 		 
 		  String duplicate="";
@@ -106,6 +108,30 @@ public class Logic {
 	   		} 	    	 		
 	    	return duplicate;			
 		}
+	 
+	 
+	 /**
+	  * Metodo el cual muestra la diferencia de caracteres de la cadena original con la entrada o parametro
+	  * @param sentenc cadena de caracteres
+	  * @return cadena original con caracteres de diferencia.
+	  */
+	    public  String difference(String sentenc) {
+	        
+	   	    String duplicate="";
+	   	    
+	   		for (int i = 0; i < sentence.length(); i++) {
+	   			
+	   	    		String si = Character.toString(sentence.charAt(i));
+		
+	   	    		if (!sentenc.contains(si)) {
+	   	  
+	   	            	   duplicate+=si;
+	   	   
+	   	    		} 			
+	   			} 	
+	       	 		
+	    	return duplicate;			
+		 }
 	 
 	
 	public LocalDate fecha() {
