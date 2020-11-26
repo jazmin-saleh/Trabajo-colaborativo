@@ -61,7 +61,8 @@ public class Runner {
 			case 9:
 				break;
 			case 10:
-				JOptionPane.showMessageDialog(null, "La fecha es:" + lo.fecha());
+				String dateString= JOptionPane.showInputDialog("Ingresa la cadena en formato AAAA-MM-DD");
+				JOptionPane.showMessageDialog(null, "La fecha es:" + lo.fecha(dateString));
 				break;
 			case 11:
 				JOptionPane.showInputDialog("Ha salido del programa");

@@ -19,11 +19,18 @@ public class Logic {
 		
 	}
 	
+	/**
+	 * Metodo el cual la oracion final cambia a tener todas las primeras letras
+	 *en mayuscula (nombre propio)
+	 * @param sentence
+	 * @return characteres
+	 */
+	
 	public String nombrePropio() {
 		char[] characteres= sentence.toCharArray();
 		characteres[0]= Character.toUpperCase(characteres[0]);
 		 for (int i = 0; i < characteres.length-2; i++) {
-			if (characteres[i]== ' ' || characteres[i]== '.' || characteres[i]== ',') {
+			if (characteres[i]== ' ' || characteres[i]== '.' || characteres[i]== ',' || characteres[i]== 'y') {
 				characteres[i+1]= Character.toUpperCase(characteres[i+1]);
 			}
 		}
@@ -104,11 +111,17 @@ public class Logic {
 	    	return noDupes.toString();	
 				
 		}
+	 /**
+		 * Metodo convertir cadena de String en fecha segun el formato de LocalDate
+		 * @param dateString
+		 * @return date
+		 */
 	
-	public LocalDate fecha() {
-	 	String dateString= JOptionPane.showInputDialog("Ingresa la cadena en formato AAAA-MM-DD");
+	 
+	public LocalDate fecha(String dateString) {
+		
 	 	LocalDate date= LocalDate.parse(dateString);
 		return date;
-	 	
+			
 	}
 }

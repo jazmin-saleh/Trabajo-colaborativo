@@ -2,6 +2,8 @@ package Test;
 
 import static org.junit.Assert.*;
 
+import java.time.LocalDate;
+
 import org.junit.Test;
 
 import Logic.Logic;
@@ -22,6 +24,11 @@ public class LogicTest {
 	public LogicTest() {
 		logic = new Logic();
 	}
+	
+	@Test
+	public void testNombrePropio() {
+		assertEquals(logic.nombrePropio(), "Sogamoso Ciudad Del Sol Y Del Acero");
+	}
 
 	/**
 	 * Se hace una prueba al metodo Buscar palabra
@@ -37,5 +44,10 @@ public class LogicTest {
 	@Test
 	public void testCaracterBorrado() {
 		assertEquals(logic.CaracterBorrado("sogamoso ciudad del sol y del acero"), "SGAMS CIUDAD DEL SL Y DEL ACER");
+	}
+	
+	@Test
+	public void fecha() {
+		equals(logic.fecha("2020-12-12"));
 	}
 }
