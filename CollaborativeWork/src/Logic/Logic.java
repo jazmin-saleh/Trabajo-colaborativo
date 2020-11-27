@@ -218,9 +218,9 @@ public class Logic {
 	 *         existen en la cadena de entrada, hasta que encyentre un caracter que
 	 *         no exista
 	 */
-	public String deleteCharacters(String text, int rightOrLeft) {
+	public String deleteCharacters(String text, String rightOrLeft) {
 
-		if (rightOrLeft == 1) {
+		if (rightOrLeft.equals("Izquierda")) {
 			String finalText = SENTENCE;
 			for (int i = 0; i < SENTENCE.length(); i++) {
 				if (frequency(SENTENCE.substring(i, i + 1), text)) {

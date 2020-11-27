@@ -63,8 +63,10 @@ public class Runner {
 				break;
 			case 9:
 				String Sentencee=JOptionPane.showInputDialog("Digite texto: ");
-				int left=Integer.parseInt(JOptionPane.showInputDialog("Digite\n1.A la izquierda\n2.A la derecha"));
-				JOptionPane.showMessageDialog(null, lo.deleteCharacters(Sentencee, left));
+				String[] leftOrRigth = { "Derecha", "Izquierda"};
+				String orientation = (String) JOptionPane.showInputDialog(null, "Por donde desea borrar: ", "BORRAR",
+						JOptionPane.DEFAULT_OPTION, null, leftOrRigth, leftOrRigth[0]);
+				JOptionPane.showMessageDialog(null, lo.deleteCharacters(Sentencee, orientation));
 				break;
 			case 10:
 				String dateString= JOptionPane.showInputDialog("Ingresa la cadena en formato AAAA-MM-DD");

@@ -98,7 +98,7 @@ public class LogicTest {
 	 */
 	@Test
 	public void deleteCharacters() {
-		assertEquals(logic.deleteCharacters("curador", 2), "sogamoso ciudad del sol y del ace");
+		assertEquals(logic.deleteCharacters("curador", "izquierda"), "sogamoso ciudad del sol y del ace");
 	}
 	
 	/**
