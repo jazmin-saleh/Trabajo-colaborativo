@@ -43,6 +43,16 @@ public class LogicTest {
 		assertEquals(logic.BuscarPalabra("no"), 0);
 	}
 	
+	
+	/**
+	 * se realiza pruba al metodo encriptar
+	 */
+	@Test
+	public void testEncrypt() {
+		
+		assertEquals(Logic.Encrypt("colombia"), "kwtwujqi");
+	}
+	
 	/**
 	 * Se hace una prueba al metodo llenar palabra
 	 */
@@ -57,6 +67,20 @@ public class LogicTest {
 	@Test
 	public void testCaracterBorrado() {
 		assertEquals(logic.CaracterBorrado("sogamoso ciudad del sol y del acero"), "SGAMS CIUDAD DEL SL Y DEL ACER");
+	}
+	/**
+	 * Se hace una prueba al metodo interseccion
+	 */
+	@Test
+	public void testinterseccion() {
+		assertEquals(logic.intersection("colombia"), "colmia");
+	}
+	/**
+	 * Se hace una prueba al metodo Diferencia
+	 */
+	@Test
+	public void testDiferencia() {
+		assertEquals(logic.difference("colombia"), "sgs udd de s y de er");
 	}
 	
 	/**
