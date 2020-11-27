@@ -23,7 +23,7 @@ public class Runner {
 		do {
 			try {
 			menu = Integer
-					.parseInt(JOptionPane.showInputDialog("1.Convertir en nombre propio el contenido de la cadena\n"
+					.parseInt(JOptionPane.showInputDialog("1. Convertir en nombre propio el contenido de la cadena\n"
 							+ "2.Buscar palabra\n3.Encriptar(método estático)\n4.Desencriptar (método estático)\n5.Llenar cacarter\n6.Borrar cracteres\n"
 							+ "7.Intersección\n8.Diferencia\n9.Borrar caracteres iziquierda o derecha\n10.Convertir a fecha\n11.Salir"));
 			switch (menu) {
