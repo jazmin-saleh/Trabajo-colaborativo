@@ -2,6 +2,8 @@ package Logic;
 
 import java.time.LocalDate;
 
+import javax.swing.JOptionPane;
+
 /**
  * @author jasmin saleh Clase de la logica donde se realiza la funcionaliodad de
  *         cada uno de los métdos
@@ -9,7 +11,7 @@ import java.time.LocalDate;
  */
 public class Logic {
 	
-	final String sentence="sogamoso ciudad del sol y del acero";
+	final String sentence="sogamoso ciudad del sol Sy del acero";
 
 
 	/**
@@ -38,14 +40,39 @@ public class Logic {
 	 * 
 	 */
 	public int BuscarPalabra(String word) {
-		 String wordSpace = " "+word + " ";
-		int counter = 0;
-		for (int i = 0; i < (sentence.length() - wordSpace.length()); i++) {
-			if (sentence.substring(i, i + wordSpace.length()).equalsIgnoreCase(wordSpace)) {
-				counter++;
+		int cont = 0;
+		if (sentence.length() == word.length()) {
+			if (sentence.equalsIgnoreCase(word)) {
+				cont++;
+			}
+		} else if (sentence.length() < word.length()) {
+			cont = 0;
+		} else {
+			for (int i = 0; i <= sentence.length() - word.length(); i++) {
+
+				if (i == 0) {
+					if (sentence.substring(i + word.length(), (i + word.length() + 1)).equalsIgnoreCase(" ")) {
+						if (sentence.substring(i, i + word.length()).equalsIgnoreCase(word)) {
+							cont++;
+						}
+					}
+				} else if (i < sentence.length() - word.length()) {
+					if (sentence.substring(i - 1, i).equalsIgnoreCase(" ") && sentence
+							.substring(i + word.length(), (i + word.length() + 1)).equalsIgnoreCase(" ")) {
+						if (sentence.substring(i, i + word.length()).equalsIgnoreCase(word)) {
+							cont++;
+						}
+					}
+				} else {
+					if (sentence.substring(i - 1, i).equalsIgnoreCase(" ")) {
+						if (sentence.substring(i, i + word.length()).equalsIgnoreCase(word)) {
+							cont++;
+						}
+					}
+				}
 			}
 		}
-		return counter;
+		return cont;
 	}
 	
 	/**
