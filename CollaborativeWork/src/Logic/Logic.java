@@ -49,7 +49,7 @@ public class Logic {
 	 *         existe la cadena
 	 * 
 	 */
-	public int BuscarPalabra(String word) {
+	public int buscarPalabra(String word) {
 		int cont = 0;
 		if (SENTENCE.length() == word.length()) {
 			if (SENTENCE.equalsIgnoreCase(word)) {
@@ -91,20 +91,14 @@ public class Logic {
 	 * @param cadena
 	 * @return retorna un resultado de tipo string.
 	 */
-	public static String Encrypt(String sentenc) {
+	public static String encriptar (String sentenc) {
 
 		char array[] = sentenc.toCharArray();
-
 		for (int i = 0; i < array.length; i++) {
-
 			array[i] = (char) (array[i] + (char) 8);
-
 		}
-
 		String encrypted = String.valueOf(array);
-
 		return encrypted;
-
 	}
 
 	/**
@@ -112,17 +106,12 @@ public class Logic {
 	 * @return Método en el cual desencripta lo que fue encriptado en el método
 	 *         anterior
 	 */
-	public static String Desencriptar(String sentenc) {
+	public static String desencriptar(String sentenc) {
 		char array[] = sentenc.toCharArray();
-
 		for (int i = 0; i < array.length; i++) {
-
 			array[i] = (char) (array[i] - (char) 8);
-
 		}
-
 		String encrypted = String.valueOf(array);
-
 		return encrypted;
 	}
 
@@ -153,7 +142,7 @@ public class Logic {
 	 *         minusculas Retorna cadena sin los caracteres
 	 * 
 	 */
-	public String CaracterBorrado(String sentencee) {
+	public String caracterBorrado(String sentencee) {
 		char replace = 'O';
 		String cpaitalPhrase = sentencee.toUpperCase();
 		String capitalCharacter = Character.toString(replace).toUpperCase();
@@ -172,11 +161,8 @@ public class Logic {
 	public String intersection(String sentenc) {
 
 		String duplicate = "";
-
 		for (int i = 0; i < sentenc.length(); i++) {
-
 			String si = Character.toString(sentenc.charAt(i));
-
 			if (SENTENCE.contains(si)) {
 				if (!duplicate.contains(si)) {
 					duplicate += si;
@@ -193,21 +179,14 @@ public class Logic {
 	 * @param sentenc cadena de caracteres
 	 * @return cadena original con caracteres de diferencia.
 	 */
-	public String difference(String sentenc) {
-
+	public String diferencia(String sentenc) {
 		String duplicate = "";
-
 		for (int i = 0; i < SENTENCE.length(); i++) {
-
 			String si = Character.toString(SENTENCE.charAt(i));
-
 			if (!sentenc.contains(si)) {
-
 				duplicate += si;
-
 			}
 		}
-
 		return duplicate;
 	}
 
@@ -218,12 +197,12 @@ public class Logic {
 	 *         existen en la cadena de entrada, hasta que encyentre un caracter que
 	 *         no exista
 	 */
-	public String deleteCharacters(String text, String rightOrLeft) {
+	public String borrarCaracteres(String text, String rightOrLeft) {
 
 		if (rightOrLeft.equals("Izquierda")) {
 			String finalText = SENTENCE;
 			for (int i = 0; i < SENTENCE.length(); i++) {
-				if (frequency(SENTENCE.substring(i, i + 1), text)) {
+				if (frecuencia(SENTENCE.substring(i, i + 1), text)) {
 					finalText = SENTENCE.substring(i + 1, SENTENCE.length());
 				} else {
 					return finalText;
@@ -234,7 +213,7 @@ public class Logic {
 		} else {
 			String finalText = SENTENCE;
 			for (int i = SENTENCE.length(); i >= 0; i--) {
-				if (frequency(SENTENCE.substring(i - 1, i), text)) {
+				if (frecuencia(SENTENCE.substring(i - 1, i), text)) {
 					finalText = SENTENCE.substring(0, i - 1);
 				} else {
 					return finalText;
@@ -251,7 +230,7 @@ public class Logic {
 	 * @return
 	 * Este método observa si la palabra se encuentra o no
 	 */
-	public static boolean frequency(String character, String string) {
+	public static boolean frecuencia(String character, String string) {
 		int counter = 0;
 		for (int i = 0; i < string.length(); i++) {
 			if (string.substring(i, i + 1).equalsIgnoreCase(character)) {
