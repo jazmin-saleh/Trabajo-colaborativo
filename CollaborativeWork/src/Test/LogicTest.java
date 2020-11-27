@@ -22,7 +22,7 @@ public class LogicTest {
 	 *Constructor de clase
 	 */
 	public LogicTest() {
-		logic = new Logic();
+		logic = new Logic("Sogamoso ciudad del sol y del acero");
 	}
 	
 	/**
@@ -68,7 +68,7 @@ public class LogicTest {
 	 */
 	@Test
 	public void testLLenarCaracter() {
-		assertEquals(logic.llenarCaracteres("Hola", "e", 4, 1), "eeeeHola");
+		assertEquals(logic.llenarCaracteres("Hola", "e", 4, "Izquierda"), "eeeeHola");
 	}
 
 	/**
@@ -76,7 +76,7 @@ public class LogicTest {
 	 */
 	@Test
 	public void testCaracterBorrado() {
-		assertEquals(logic.CaracterBorrado("sogamoso ciudad del sol y del acero"), "SGAMS CIUDAD DEL SL Y DEL ACER");
+		assertEquals(logic.CaracterBorrado("o"), "Sgams ciudad del sl y del acer");
 	}
 	/**
 	 * Se hace una prueba al metodo interseccion
@@ -90,7 +90,7 @@ public class LogicTest {
 	 */
 	@Test
 	public void testDiferencia() {
-		assertEquals(logic.difference("colombia"), "sgs udd de s y de er");
+		assertEquals(logic.difference("colombia"), "Sgs udd de s y de er");
 	}
 	
 	/**
@@ -98,7 +98,7 @@ public class LogicTest {
 	 */
 	@Test
 	public void deleteCharacters() {
-		assertEquals(logic.deleteCharacters("curador", "izquierda"), "sogamoso ciudad del sol y del ace");
+		assertEquals(logic.deleteCharacters("curador", "izquierda"), "Sogamoso ciudad del sol y del ace");
 	}
 	
 	/**

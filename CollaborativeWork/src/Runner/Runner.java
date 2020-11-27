@@ -17,8 +17,8 @@ public class Runner {
 	 */
 	public static void menu() {
 		String sentence="";
-
-		Logic lo = new Logic();
+		String text=JOptionPane.showInputDialog("Digite cadena principal: ");
+		Logic lo = new Logic(text);
 		int menu=0;
 		do {
 			try {
@@ -43,14 +43,23 @@ public class Runner {
 				JOptionPane.showMessageDialog(null, lo.Desencriptar(sentence));
 				break;
 			case 5:
-				String wordString= JOptionPane.showInputDialog("Escriba una frase");
 				String letters= JOptionPane.showInputDialog("Digite la letra a añadir");
 				int cant= Integer.parseInt(JOptionPane.showInputDialog("Digite la cantidad de letras a añadir"));
-				int side= Integer.parseInt(JOptionPane.showInputDialog("1. Izquierda  2. Derecha"));
-				JOptionPane.showMessageDialog(null, "Frase final: " + lo.llenarCaracteres(wordString, letters, cant, side));
+				String[] leftOrRigt = { "Izquierda", "Derecha"};
+				String side = (String) JOptionPane.showInputDialog(null, "Por donde desea borrar: ", "BORRAR",
+						JOptionPane.DEFAULT_OPTION, null, leftOrRigt, leftOrRigt[0]);
+				JOptionPane.showMessageDialog(null, "Frase final: " + lo.llenarCaracteres(sentence, letters, cant, side));
 				break;
 			case 6:
-				String sentencee=JOptionPane.showInputDialog("Digite la farse que desea");
+				String sentencee="";
+				int counter=0;
+				do {
+					if(counter!=0) {
+						JOptionPane.showMessageDialog(null, "Solo puede ingresar un caracter","ADVERTENCIA",JOptionPane.WARNING_MESSAGE);
+					}
+					sentencee=JOptionPane.showInputDialog("Digite el caracter que desea borrar");
+					counter++;
+				}while(sentencee.length()>1);
 				JOptionPane.showMessageDialog(null, lo.CaracterBorrado(sentencee));
 				break;
 			case 7:
@@ -73,7 +82,8 @@ public class Runner {
 				JOptionPane.showMessageDialog(null, "La fecha es:" + lo.fecha(dateString));
 				break;
 			case 11:
-				JOptionPane.showMessageDialog(null, "Ha salido del programa");
+				JOptionPane.showMessageDialog(null, "Ha salido del programa","ADVERTENCIA",JOptionPane.WARNING_MESSAGE);
+				
 				break;
 				default: JOptionPane.showMessageDialog(null, "Opcion invalida","ERROR",JOptionPane.ERROR_MESSAGE);
 			}

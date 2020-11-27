@@ -14,13 +14,14 @@ public class Logic {
 	/**
 	 * Atributo
 	 */
-	final String SENTENCE = "sogamoso ciudad del sol y del acero";
+	final String SENTENCE;
 
 	/**
 	 * Constructor de la clase
 	 */
-	public Logic() {
-
+	public Logic(String sentence) {
+		SENTENCE = sentence;
+		
 	}
 
 	/**
@@ -133,16 +134,16 @@ public class Logic {
 	 * @return finalSentence
 	 */
 
-	public String llenarCaracteres(String wordString, String letters, int cant, int side) {
+	public String llenarCaracteres(String wordString, String letters, int cant, String side) {
 		String z = "", b = "";
 		String finalSentence = "";
 		for (int i = 0; i < cant; i++) {
 			b = letters;
 			z += b;
 		}
-		if (side == 1) {
+		if (side.equals("Izquierda")) {
 			finalSentence = z + wordString;
-		} else if (side == 2) {
+		} else if (side.equals("Derecha")) {
 			finalSentence = wordString + z;
 		}
 		return finalSentence;
@@ -154,11 +155,14 @@ public class Logic {
 	 * 
 	 */
 	public String CaracterBorrado(String sentencee) {
-		char replace = 'O';
-		String cpaitalPhrase = sentencee.toUpperCase();
-		String capitalCharacter = Character.toString(replace).toUpperCase();
-		String removeCracter = cpaitalPhrase.replaceAll(capitalCharacter, "");
-		return removeCracter;
+		String lowerCase=sentencee.toLowerCase();
+		String UpperAcase=sentencee.toUpperCase();
+		char replace = lowerCase.charAt(0);
+		char upperCase=UpperAcase.charAt(0);
+		String modificar = SENTENCE;
+		modificar=modificar.replaceAll(Character.toString(replace), "");
+		modificar=modificar.replaceAll(Character.toString(upperCase), "");
+		return modificar;
 	}
 
 	/**
