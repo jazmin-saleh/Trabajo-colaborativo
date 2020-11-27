@@ -16,7 +16,7 @@ public class Runner {
 	 * los métodos
 	 */
 	public static void menu() {
-		
+
 		Logic lo = new Logic();
 		int menu=0;
 		do {
@@ -33,14 +33,13 @@ public class Runner {
 				JOptionPane.showMessageDialog(null, lo.nombrePropio());
 				break;
 			case 2:
-					String word=JOptionPane.showInputDialog("Digite palabra");
-					JOptionPane.showMessageDialog(null, "Error");
+					String word=JOptionPane.showInputDialog("Digite palabra: ");
 					JOptionPane.showMessageDialog(null, lo.BuscarPalabra(word));
+					
 				break;
 			case 3:
-				String sentence;
-				sentence=JOptionPane.showInputDialog("escriba palabra u oracion a encriptar");
-				JOptionPane.showMessageDialog(null, Logic.Encrypt(sentence));
+				String sentence=JOptionPane.showInputDialog("escriba palabra u oracion a encriptar");
+				JOptionPane.showMessageDialog(null, lo.Encrypt(sentence));
 				menu();
 				break;
 			case 4:
@@ -61,6 +60,9 @@ public class Runner {
 				JOptionPane.showMessageDialog(null, lo.intersection(sentence));
 				break;
 			case 8:
+				sentence=JOptionPane.showInputDialog("escriba palabra a diferenciar");
+				JOptionPane.showMessageDialog(null, lo.difference(sentence));
+				
 				break;
 			case 9:
 				break;

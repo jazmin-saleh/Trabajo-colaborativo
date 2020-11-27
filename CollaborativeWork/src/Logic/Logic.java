@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  */
 public class Logic {
 	
-	final String sentence="sogamoso ciudad del sol y del acero";
+	final String sentence="sogamoso ciudad del sol Sy del acero";
 
 
 	/**
@@ -47,14 +47,39 @@ public class Logic {
 	 * 
 	 */
 	public int BuscarPalabra(String word) {
-		 String wordSpace = " "+word + " ";
-		int counter = 0;
-		for (int i = 0; i < (sentence.length() - wordSpace.length()); i++) {
-			if (sentence.substring(i, i + wordSpace.length()).equalsIgnoreCase(wordSpace)) {
-				counter++;
+		int cont =0;
+		if (sentence.length() == word.length()) {
+			if (sentence.equalsIgnoreCase(word)) {
+				cont++;
+			}
+		} else if (sentence.length() < word.length()) {
+			cont = 0;
+		} else {
+			for (int i = 0; i <= sentence.length() - word.length(); i++) {
+
+				if (i == 0) {
+					if (sentence.substring(i + word.length(), (i + word.length() + 1)).equalsIgnoreCase(" ")) {
+						if (sentence.substring(i, i + word.length()).equalsIgnoreCase(word)) {
+							cont++;
+						}
+					}
+				} else if (i < sentence.length() - word.length()) {
+					if (sentence.substring(i - 1, i).equalsIgnoreCase(" ") && sentence
+							.substring(i + word.length(), (i + word.length() + 1)).equalsIgnoreCase(" ")) {
+						if (sentence.substring(i, i + word.length()).equalsIgnoreCase(word)) {
+							cont++;
+						}
+					}
+				} else {
+					if (sentence.substring(i - 1, i).equalsIgnoreCase(" ")) {
+						if (sentence.substring(i, i + word.length()).equalsIgnoreCase(word)) {
+							cont++;
+						}
+					}
+				}
 			}
 		}
-		return counter;
+		return cont;
 	}
 	
 	/**
@@ -114,31 +139,62 @@ public class Logic {
 		return removeCracter;
 	}
 	
+	
 	/**
-	 * Metodo el cual elimina caracteres repetidos
-	 * @param sentenc
-	 * @return
+	 * Metodo el cual muestra los caracteres que se repiten entre las dos cadenas  
+	 * @param sentenc cadena de caracteres
+	 * @return retorna cadena de caracteres iguales sin repetir del parametro ingresado
 	 */
+	
 	 public  String intersection(String sentenc) {
 		 
-		 StringBuilder noDupes = new StringBuilder();
-		    for (int i = 0; i < sentenc.length(); i++) {
-		    	for (int j = 0; j < sentence.length(); j++) {
-		    		String si = sentenc.substring(i, i + 1);
-		    		if (noDupes.indexOf(si) == -1) {
-		                noDupes.append(si); } 
-		             } 
-						
-				} 	
-	    	return noDupes.toString();	
-				
+		  String duplicate="";
+	   	    
+	   		for (int i = 0; i < sentenc.length(); i++) {
+	   			
+	   	    		String si = Character.toString(sentenc.charAt(i));
+		
+	   	    		if (sentence.contains(si)) {
+	   	               if(!duplicate.contains(si)) {
+	   	            	   duplicate+=si;  
+	   	               }
+	   	    		} 			
+	   		} 	    	 		
+	    	return duplicate;			
 		}
+
+	 
+	 
 	 /**
-		 * Metodo convertir cadena de String en fecha segun el formato de LocalDate
-		 * @param dateString
-		 * @return date
-		 */
-	
+	  * Metodo el cual muestra la diferencia de caracteres de la cadena original con la entrada o parametro
+	  * @param sentenc cadena de caracteres
+	  * @return cadena original con caracteres de diferencia.
+	  */
+	    public  String difference(String sentenc) {
+	        
+	   	    String duplicate="";
+	   	    
+	   		for (int i = 0; i < sentence.length(); i++) {
+	   			
+	   	    		String si = Character.toString(sentence.charAt(i));
+		
+	   	    		if (!sentenc.contains(si)) {
+	   	  
+	   	            	   duplicate+=si;
+	   	   
+	   	    		} 			
+	   			} 	
+	       	 		
+	    	return duplicate;			
+		 }
+	 
+
+
+	 /**
+			 * Metodo convertir cadena de String en fecha segun el formato de LocalDate
+			 * @param dateString
+			 * @return date
+			 */
 	 
 	public LocalDate fecha(String dateString) {
 		
