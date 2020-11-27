@@ -46,7 +46,11 @@ public class Runner {
 			case 4:
 				break;
 			case 5:
-
+				String wordString= JOptionPane.showInputDialog("Escriba una frase");
+				String letters= JOptionPane.showInputDialog("Digite la letra a añadir");
+				int cant= Integer.parseInt(JOptionPane.showInputDialog("Digite la cantidad de letras a añadir"));
+				int side= Integer.parseInt(JOptionPane.showInputDialog("1. Izquierda  2. Derecha"));
+				JOptionPane.showMessageDialog(null, "Frase final: " + lo.llenarCaracteres(wordString, letters, cant, side));
 				break;
 			case 6:
 				String sentencee=JOptionPane.showInputDialog("Digite la farse que desea");

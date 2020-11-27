@@ -2,6 +2,8 @@ package Logic;
 
 import java.time.LocalDate;
 
+import javax.swing.JOptionPane;
+
 /**
  * @author jasmin saleh Clase de la logica donde se realiza la funcionaliodad de
  *         cada uno de los métdos
@@ -77,7 +79,27 @@ public class Logic {
 			
 		}
 	 
-	
+	 /**
+		 * Metodo llenar caracteres de un frase
+		 * @param wordString, letters, cant,side
+		 * @return finalSentence
+		 */
+		 
+	 public String llenarCaracteres(String wordString, String letters,int cant, int side) {
+		 String z= "", b= "";
+		 String finalSentence = "";		 
+		 for (int i = 0; i < cant; i++) {
+			 b= letters;
+			 z+=b;		
+		}
+		 if (side==1) {
+			finalSentence= z+wordString;
+		} else if (side==2) {
+			finalSentence= wordString+z;
+		}	
+		 return finalSentence;
+	 }
+	 
 
 	/**
 	 * @return Se defino cual es el caracter a borrar Se ignora mayusculas y

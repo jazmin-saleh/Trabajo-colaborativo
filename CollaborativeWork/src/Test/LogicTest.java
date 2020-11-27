@@ -25,6 +25,10 @@ public class LogicTest {
 		logic = new Logic();
 	}
 	
+	/**
+	 * Se hace una prueba al metodo convertir la frase en nombre propio
+	 */
+	
 	@Test
 	public void testNombrePropio() {
 		assertEquals(logic.nombrePropio(), "Sogamoso Ciudad Del Sol Y Del Acero");
@@ -37,6 +41,14 @@ public class LogicTest {
 	public void testBuscarPalabra() {
 		assertEquals(logic.BuscarPalabra("del"), 2);
 	}
+	
+	/**
+	 * Se hace una prueba al metodo llenar palabra
+	 */
+	@Test
+	public void testLLenarCaracter() {
+		assertEquals(logic.llenarCaracteres("Hola", "e", 4, 1), "eeeeHola");
+	}
 
 	/**
 	 * Se realiza una prueba la metodo Cracter borrado
@@ -46,6 +58,9 @@ public class LogicTest {
 		assertEquals(logic.CaracterBorrado("sogamoso ciudad del sol y del acero"), "SGAMS CIUDAD DEL SL Y DEL ACER");
 	}
 	
+	/**
+	 * Se hace una prueba al metodo convertir fecha
+	 */
 	@Test
 	public void fecha() {
 		equals(logic.fecha("2020-12-12"));
