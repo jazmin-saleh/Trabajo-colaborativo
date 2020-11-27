@@ -29,6 +29,7 @@ public class LogicTest {
 	@Test
 	public void testBuscarPalabra() {
 		assertEquals(logic.BuscarPalabra("del"), 2);
+		assertEquals(logic.BuscarPalabra("no"), 0);
 	}
 
 	/**

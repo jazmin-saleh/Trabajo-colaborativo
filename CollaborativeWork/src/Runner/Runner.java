@@ -33,7 +33,7 @@ public class Runner {
 				JOptionPane.showMessageDialog(null, lo.nombrePropio());
 				break;
 			case 2:
-					String word=JOptionPane.showInputDialog("Digite palabra");
+					String word=JOptionPane.showInputDialog("Digite palabra: ");
 					JOptionPane.showMessageDialog(null, lo.BuscarPalabra(word));
 					
 				break;

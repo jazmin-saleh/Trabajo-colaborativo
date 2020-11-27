@@ -40,7 +40,7 @@ public class Logic {
 	 * 
 	 */
 	public int BuscarPalabra(String word) {
-		int cont = 0;
+		int cont =0;
 		if (sentence.length() == word.length()) {
 			if (sentence.equalsIgnoreCase(word)) {
 				cont++;
