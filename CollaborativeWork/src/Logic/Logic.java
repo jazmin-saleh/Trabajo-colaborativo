@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  */
 public class Logic {
 	
-	final String sentence="sogamoso ciudad del sol Sy del acero";
+	final String SENTENCE="sogamoso ciudad del sol y del acero";
 
 
 	/**
@@ -29,7 +29,7 @@ public class Logic {
 	 */
 	
 	public String nombrePropio() {
-		char[] characteres= sentence.toCharArray();
+		char[] characteres= SENTENCE.toCharArray();
 		characteres[0]= Character.toUpperCase(characteres[0]);
 		 for (int i = 0; i < characteres.length-2; i++) {
 			if (characteres[i]== ' ' || characteres[i]== '.' || characteres[i]== ',' || characteres[i]== 'y') {
@@ -48,31 +48,31 @@ public class Logic {
 	 */
 	public int BuscarPalabra(String word) {
 		int cont =0;
-		if (sentence.length() == word.length()) {
-			if (sentence.equalsIgnoreCase(word)) {
+		if (SENTENCE.length() == word.length()) {
+			if (SENTENCE.equalsIgnoreCase(word)) {
 				cont++;
 			}
-		} else if (sentence.length() < word.length()) {
+		} else if (SENTENCE.length() < word.length()) {
 			cont = 0;
 		} else {
-			for (int i = 0; i <= sentence.length() - word.length(); i++) {
+			for (int i = 0; i <= SENTENCE.length() - word.length(); i++) {
 
 				if (i == 0) {
-					if (sentence.substring(i + word.length(), (i + word.length() + 1)).equalsIgnoreCase(" ")) {
-						if (sentence.substring(i, i + word.length()).equalsIgnoreCase(word)) {
+					if (SENTENCE.substring(i + word.length(), (i + word.length() + 1)).equalsIgnoreCase(" ")) {
+						if (SENTENCE.substring(i, i + word.length()).equalsIgnoreCase(word)) {
 							cont++;
 						}
 					}
-				} else if (i < sentence.length() - word.length()) {
-					if (sentence.substring(i - 1, i).equalsIgnoreCase(" ") && sentence
+				} else if (i < SENTENCE.length() - word.length()) {
+					if (SENTENCE.substring(i - 1, i).equalsIgnoreCase(" ") && SENTENCE
 							.substring(i + word.length(), (i + word.length() + 1)).equalsIgnoreCase(" ")) {
-						if (sentence.substring(i, i + word.length()).equalsIgnoreCase(word)) {
+						if (SENTENCE.substring(i, i + word.length()).equalsIgnoreCase(word)) {
 							cont++;
 						}
 					}
 				} else {
-					if (sentence.substring(i - 1, i).equalsIgnoreCase(" ")) {
-						if (sentence.substring(i, i + word.length()).equalsIgnoreCase(word)) {
+					if (SENTENCE.substring(i - 1, i).equalsIgnoreCase(" ")) {
+						if (SENTENCE.substring(i, i + word.length()).equalsIgnoreCase(word)) {
 							cont++;
 						}
 					}
@@ -103,6 +103,20 @@ public class Logic {
 			return encrypted;
 			
 		}
+	 
+	 public static String Desencriptar(String sentenc) {
+		 char array[]=sentenc.toCharArray();
+			
+			for (int i = 0; i < array.length; i++) {
+			     
+				array[i]=(char)(array[i]-(char)8);
+				
+			  }
+			
+			String encrypted=String.valueOf(array);
+		 
+			return encrypted;
+	 }
 	 
 	 /**
 		 * Metodo llenar caracteres de un frase
@@ -154,7 +168,7 @@ public class Logic {
 	   			
 	   	    		String si = Character.toString(sentenc.charAt(i));
 		
-	   	    		if (sentence.contains(si)) {
+	   	    		if (SENTENCE.contains(si)) {
 	   	               if(!duplicate.contains(si)) {
 	   	            	   duplicate+=si;  
 	   	               }
@@ -174,9 +188,9 @@ public class Logic {
 	        
 	   	    String duplicate="";
 	   	    
-	   		for (int i = 0; i < sentence.length(); i++) {
+	   		for (int i = 0; i < SENTENCE.length(); i++) {
 	   			
-	   	    		String si = Character.toString(sentence.charAt(i));
+	   	    		String si = Character.toString(SENTENCE.charAt(i));
 		
 	   	    		if (!sentenc.contains(si)) {
 	   	  
@@ -187,6 +201,47 @@ public class Logic {
 	       	 		
 	    	return duplicate;			
 		 }
+	    public String deleteCharacters(String text, int rightOrLeft) {
+
+			if(rightOrLeft ==1) {
+				String finalText = SENTENCE;
+				for (int i = 0; i < SENTENCE.length(); i++) {
+					if(frequency(SENTENCE.substring(i, i+1), text)) {
+						finalText = SENTENCE.substring(i+1, SENTENCE.length());
+					}
+					else {
+						return finalText;
+					}
+						
+				}
+				return finalText;
+			}else {
+				String finalText = SENTENCE;
+				for (int i = SENTENCE.length(); i >= 0; i--) {
+					if(frequency(SENTENCE.substring(i-1, i), text)) {
+						finalText = SENTENCE.substring(0, i-1);
+					}
+					else {
+						return finalText;
+					}
+						
+				}
+				return finalText;
+			}
+		}
+
+		public static boolean frequency(String character, String string) {
+			int counter = 0;
+			for (int i = 0; i < string.length(); i++) {
+				if (string.substring(i, i + 1).equalsIgnoreCase(character)) {
+					counter++;
+				}
+			}
+			if (counter == 0)
+				return false;
+			else
+				return true;
+		}
 	 
 
 

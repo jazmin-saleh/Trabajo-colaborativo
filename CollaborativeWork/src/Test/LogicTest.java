@@ -41,6 +41,8 @@ public class LogicTest {
 	public void testBuscarPalabra() {
 		assertEquals(logic.BuscarPalabra("del"), 2);
 		assertEquals(logic.BuscarPalabra("no"), 0);
+		assertEquals(logic.BuscarPalabra("SogAmoso"), 1);
+		
 	}
 	
 	/**

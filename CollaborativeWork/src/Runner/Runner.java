@@ -16,6 +16,7 @@ public class Runner {
 	 * los métodos
 	 */
 	public static void menu() {
+		String sentence="";
 
 		Logic lo = new Logic();
 		int menu=0;
@@ -25,24 +26,21 @@ public class Runner {
 					.parseInt(JOptionPane.showInputDialog("1.Convertir en nombre propio el contenido de la cadena\n"
 							+ "2.Buscar palabra\n3.Encriptar(método estático)\n4.Desencriptar (método estático)\n5.Llenar cacarter\n6.Borrar cracteres\n"
 							+ "7.Intersección\n8.Diferencia\n9.Borrar caracteres iziquierda o derecha\n10.Convertir a fecha\n11.Salir"));
-			}catch(Exception e) {
-				JOptionPane.showMessageDialog(null, "Error");
-			}
 			switch (menu) {
 			case 1:
 				JOptionPane.showMessageDialog(null, lo.nombrePropio());
 				break;
 			case 2:
 					String word=JOptionPane.showInputDialog("Digite palabra: ");
-					JOptionPane.showMessageDialog(null, lo.BuscarPalabra(word));
-					
+					JOptionPane.showMessageDialog(null, lo.BuscarPalabra(word));	
 				break;
 			case 3:
-				String sentence=JOptionPane.showInputDialog("escriba palabra u oracion a encriptar");
-				JOptionPane.showMessageDialog(null, lo.Encrypt(sentence));
-				menu();
+				sentence=JOptionPane.showInputDialog("escriba palabra u oracion a encriptar");
+				sentence=lo.Encrypt(sentence);
+				JOptionPane.showMessageDialog(null, sentence);
 				break;
 			case 4:
+				JOptionPane.showMessageDialog(null, lo.Desencriptar(sentence));
 				break;
 			case 5:
 				String wordString= JOptionPane.showInputDialog("Escriba una frase");
@@ -62,9 +60,11 @@ public class Runner {
 			case 8:
 				sentence=JOptionPane.showInputDialog("escriba palabra a diferenciar");
 				JOptionPane.showMessageDialog(null, lo.difference(sentence));
-				
 				break;
 			case 9:
+				String Sentencee=JOptionPane.showInputDialog("Digite texto: ");
+				int left=Integer.parseInt(JOptionPane.showInputDialog("Digite\n1.A la izquierda\n2.A la derecha"));
+				JOptionPane.showMessageDialog(null, lo.deleteCharacters(Sentencee, left));
 				break;
 			case 10:
 				String dateString= JOptionPane.showInputDialog("Ingresa la cadena en formato AAAA-MM-DD");
@@ -73,10 +73,18 @@ public class Runner {
 			case 11:
 				JOptionPane.showMessageDialog(null, "Ha salido del programa");
 				break;
+				default: JOptionPane.showMessageDialog(null, "Opcion invalida","ERROR",JOptionPane.ERROR_MESSAGE);
+			}
+			}catch(Exception e) {
+				JOptionPane.showMessageDialog(null, "Error");
 			}
 		}while(menu!=11);
 	}
 
+	/**
+	 * @param args
+	 * Para mostrarle a el usuraio el menu 
+	 */
 	public static void main(String[] args) {
 		menu();
 	}
