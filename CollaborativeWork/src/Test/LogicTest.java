@@ -56,6 +56,14 @@ public class LogicTest {
 	}
 	
 	/**
+	 * Se realizo la prueba de desencriptar
+	 */
+	@Test
+	public void testDesencriptar() {
+		assertEquals(Logic.Desencriptar("kwtwujqi"), "colombia");
+	}
+	
+	/**
 	 * Se hace una prueba al metodo llenar palabra
 	 */
 	@Test
@@ -86,10 +94,22 @@ public class LogicTest {
 	}
 	
 	/**
+	 * Se hace una prueba del metodo deleteCharacter
+	 */
+	@Test
+	public void deleteCharacters() {
+		assertEquals(logic.deleteCharacters("curador", 2), "sogamoso ciudad del sol y del ace");
+	}
+	
+	/**
 	 * Se hace una prueba al metodo convertir fecha
 	 */
 	@Test
 	public void fecha() {
 		equals(logic.fecha("2020-12-12"));
 	}
+	
+	
+	
+	
 }
