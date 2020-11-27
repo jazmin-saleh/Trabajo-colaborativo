@@ -39,9 +39,9 @@ public class LogicTest {
 	 */
 	@Test
 	public void testBuscarPalabra() {
-		assertEquals(logic.BuscarPalabra("del"), 2);
-		assertEquals(logic.BuscarPalabra("no"), 0);
-		assertEquals(logic.BuscarPalabra("SogAmoso"), 1);
+		assertEquals(logic.buscarPalabra("del"), 2);
+		assertEquals(logic.buscarPalabra("no"), 0);
+		assertEquals(logic.buscarPalabra("SogAmoso"), 1);
 		
 	}
 	
@@ -52,7 +52,7 @@ public class LogicTest {
 	@Test
 	public void testEncrypt() {
 		
-		assertEquals(Logic.Encrypt("colombia"), "kwtwujqi");
+		assertEquals(Logic.encriptar("colombia"), "kwtwujqi");
 	}
 	
 	/**
@@ -60,7 +60,7 @@ public class LogicTest {
 	 */
 	@Test
 	public void testDesencriptar() {
-		assertEquals(Logic.Desencriptar("kwtwujqi"), "colombia");
+		assertEquals(Logic.desencriptar("kwtwujqi"), "colombia");
 	}
 	
 	/**
@@ -90,7 +90,7 @@ public class LogicTest {
 	 */
 	@Test
 	public void testDiferencia() {
-		assertEquals(logic.difference("colombia"), "Sgs udd de s y de er");
+		assertEquals(logic.diferencia("colombia"), "Sgs udd de s y de er");
 	}
 	
 	/**
@@ -98,7 +98,7 @@ public class LogicTest {
 	 */
 	@Test
 	public void deleteCharacters() {
-		assertEquals(logic.deleteCharacters("curador", "izquierda"), "Sogamoso ciudad del sol y del ace");
+		assertEquals(logic. borrarCaracteres("curador", "izquierda"), "Sogamoso ciudad del sol y del ace");
 	}
 	
 	/**
@@ -108,8 +108,5 @@ public class LogicTest {
 	public void fecha() {
 		equals(logic.fecha("2020-12-12"));
 	}
-	
-	
-	
 	
 }

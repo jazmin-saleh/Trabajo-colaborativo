@@ -32,15 +32,15 @@ public class Runner {
 				break;
 			case 2:
 					String word=JOptionPane.showInputDialog("Digite palabra: ");
-					JOptionPane.showMessageDialog(null, lo.BuscarPalabra(word));	
+					JOptionPane.showMessageDialog(null, lo.buscarPalabra(word));	
 				break;
 			case 3:
 				sentence=JOptionPane.showInputDialog("escriba palabra u oracion a encriptar");
-				sentence=lo.Encrypt(sentence);
+				sentence=lo.encriptar(sentence);
 				JOptionPane.showMessageDialog(null, sentence);
 				break;
 			case 4:
-				JOptionPane.showMessageDialog(null, lo.Desencriptar(sentence));
+				JOptionPane.showMessageDialog(null, lo.desencriptar(sentence));
 				break;
 			case 5:
 				String letters= JOptionPane.showInputDialog("Digite la letra a añadir");
@@ -51,6 +51,7 @@ public class Runner {
 				JOptionPane.showMessageDialog(null, "Frase final: " + lo.llenarCaracteres(sentence, letters, cant, side));
 				break;
 			case 6:
+
 				String sentencee="";
 				int counter=0;
 				do {
@@ -68,14 +69,14 @@ public class Runner {
 				break;
 			case 8:
 				sentence=JOptionPane.showInputDialog("escriba palabra a diferenciar");
-				JOptionPane.showMessageDialog(null, lo.difference(sentence));
+				JOptionPane.showMessageDialog(null, lo.diferencia(sentence));
 				break;
 			case 9:
 				String Sentencee=JOptionPane.showInputDialog("Digite texto: ");
 				String[] leftOrRigth = { "Derecha", "Izquierda"};
 				String orientation = (String) JOptionPane.showInputDialog(null, "Por donde desea borrar: ", "BORRAR",
 						JOptionPane.DEFAULT_OPTION, null, leftOrRigth, leftOrRigth[0]);
-				JOptionPane.showMessageDialog(null, lo.deleteCharacters(Sentencee, orientation));
+				JOptionPane.showMessageDialog(null, lo.borrarCaracteres(Sentencee, orientation));
 				break;
 			case 10:
 				String dateString= JOptionPane.showInputDialog("Ingresa la cadena en formato AAAA-MM-DD");
