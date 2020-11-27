@@ -69,7 +69,7 @@ public class Runner {
 				JOptionPane.showMessageDialog(null, "La fecha es:" + lo.fecha(dateString));
 				break;
 			case 11:
-				JOptionPane.showInputDialog("Ha salido del programa");
+				JOptionPane.showMessageDialog(null, "Ha salido del programa");
 				break;
 			}
 		}while(menu!=11);
