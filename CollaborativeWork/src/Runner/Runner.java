@@ -51,7 +51,6 @@ public class Runner {
 				JOptionPane.showMessageDialog(null, "Frase final: " + lo.llenarCaracteres(sentence, letters, cant, side));
 				break;
 			case 6:
-
 				String sentencee="";
 				int counter=0;
 				do {
