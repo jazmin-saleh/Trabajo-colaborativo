@@ -1,4 +1,4 @@
-package Test;
+package co.edu.uptc.Test;
 
 import static org.junit.Assert.*;
 
@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 import org.junit.Test;
 
-import Logic.Logic;
+import co.edu.uptc.Logic.Logic;
 
 /**
  * @author jasmin saleh Se realizan las pruebas unitarias de la clase Logic

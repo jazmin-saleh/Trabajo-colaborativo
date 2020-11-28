@@ -1,4 +1,4 @@
-package Logic;
+package co.edu.uptc.Logic;
 
 import java.time.LocalDate;
 

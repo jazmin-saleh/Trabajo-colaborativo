@@ -1,9 +1,9 @@
-package Runner;
+package co.edu.uptc.Runner;
 
 import javax.swing.JOptionPane;
 import javax.swing.text.AttributeSet.CharacterAttribute;
 
-import Logic.Logic;
+import co.edu.uptc.Logic.Logic;
 
 /**
  * @author jasmin saleh Para mostrerle al usuario nuetros menu y metodos
