@@ -76,7 +76,7 @@ public class LogicTest {
 	 */
 	@Test
 	public void testCaracterBorrado() {
-		assertEquals(logic.CaracterBorrado("o"), "Sgams ciudad del sl y del acer");
+		assertEquals(logic.caracterBorrado("o"), "Sgams ciudad del sl y del acer");
 	}
 	/**
 	 * Se hace una prueba al metodo interseccion

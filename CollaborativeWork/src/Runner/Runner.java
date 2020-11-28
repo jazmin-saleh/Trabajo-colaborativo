@@ -61,7 +61,7 @@ public class Runner {
 					sentencee=JOptionPane.showInputDialog("Digite el caracter que desea borrar");
 					counter++;
 				}while(sentencee.length()>1);
-				JOptionPane.showMessageDialog(null, lo.CaracterBorrado(sentencee));
+				JOptionPane.showMessageDialog(null, lo.caracterBorrado(sentencee));
 				break;
 			case 7:
 				sentence=JOptionPane.showInputDialog("escriba palabra a intersectar");

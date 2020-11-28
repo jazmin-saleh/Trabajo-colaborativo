@@ -144,7 +144,7 @@ public class Logic {
 	 * 
 	 */
 
-	public String CaracterBorrado(String sentencee) {
+	public String caracterBorrado(String sentencee) {
 		String lowerCase=sentencee.toLowerCase();
 		String UpperAcase=sentencee.toUpperCase();
 		char replace = lowerCase.charAt(0);
@@ -155,13 +155,6 @@ public class Logic {
 		return modificar;
 	}
 
-	public String caracterBorrado(String sentencee) {
-		char replace = 'O';
-		String cpaitalPhrase = sentencee.toUpperCase();
-		String capitalCharacter = Character.toString(replace).toUpperCase();
-		String removeCracter = cpaitalPhrase.replaceAll(capitalCharacter, "");
-		return removeCracter;
-	}
 
 	/**
 	 * Metodo el cual muestra los caracteres que se repiten entre las dos cadenas
@@ -264,7 +257,7 @@ public class Logic {
 	 */
 
 	public LocalDate fecha(String dateString) {
-
+ 
 		LocalDate date = LocalDate.parse(dateString);
 		return date;
 
